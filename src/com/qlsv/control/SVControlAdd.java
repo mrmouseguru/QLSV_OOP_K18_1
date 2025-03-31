@@ -1,6 +1,7 @@
 package com.qlsv.control;
 
 import com.qlsv.database.SVAddDAO;
+import com.qlsv.entity.SinhVien;
 import com.qlsv.ui.SVInAdd;
 import com.qlsv.ui.SVOutAdd;
 
@@ -29,13 +30,16 @@ public class SVControlAdd {
 	public void add() {
 		//1. gửi thông điệp cho đối tượng 
 		//SVInAdd (nhận vào thông tin SV mà user nhập từ bàn phím)
-		svInAdd.input();
+		SinhVien sv = null;
+		sv = svInAdd.input();
 		
 		//2. gửi thông điệp đến đối tượng 
 		//SVAddDAO - thêm thông tin SV vào CSDL
+		svAddDAO.insert(sv);
 		
 		//3. gửi thông điệp đến đối tượng 
 		//SVOutAdd - hiển thị thông báo cho user
+		svOutAdd.showMessage(sv);
 	}
 		
 	

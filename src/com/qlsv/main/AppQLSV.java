@@ -4,8 +4,10 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 import com.qlsv.control.SVControlAdd;
+import com.qlsv.database.SVAddDAO;
 import com.qlsv.ui.SVInAdd;
 import com.qlsv.ui.SVMenu;
+import com.qlsv.ui.SVOutAdd;
 
 public class AppQLSV {
 
@@ -17,12 +19,16 @@ public class AppQLSV {
 		String prompt = "->";
 		SVControlAdd svControlAdd;
 		SVInAdd svInAdd;
+		SVAddDAO svAddDAO;
+		SVOutAdd svOutAdd;
 		
 		//bước 3    //bước 2
 		out =       new PrintWriter(System.out);
 		in = new Scanner(System.in);
 		svInAdd = new SVInAdd(in, out);
-		svControlAdd = new SVControlAdd(null, svInAdd, null);
+		svAddDAO = new SVAddDAO();
+		svOutAdd = new SVOutAdd(out);
+		svControlAdd = new SVControlAdd(svAddDAO, svInAdd, svOutAdd);
 		
 		//gửi thông điệp
 		out.println("~~~~~Chương trình Quản lý sinh viên ~~~");
