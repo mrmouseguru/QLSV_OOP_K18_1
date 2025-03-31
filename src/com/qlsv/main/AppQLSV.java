@@ -3,6 +3,8 @@ package com.qlsv.main;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import com.qlsv.control.SVControlAdd;
+import com.qlsv.ui.SVInAdd;
 import com.qlsv.ui.SVMenu;
 
 public class AppQLSV {
@@ -13,10 +15,14 @@ public class AppQLSV {
 		PrintWriter out;
 		Scanner in;
 		String prompt = "->";
+		SVControlAdd svControlAdd;
+		SVInAdd svInAdd;
 		
 		//bước 3    //bước 2
 		out =       new PrintWriter(System.out);
 		in = new Scanner(System.in);
+		svInAdd = new SVInAdd(in, out);
+		svControlAdd = new SVControlAdd(null, svInAdd, null);
 		
 		//gửi thông điệp
 		out.println("~~~~~Chương trình Quản lý sinh viên ~~~");
@@ -25,7 +31,8 @@ public class AppQLSV {
 		//bước 1
 		SVMenu menu;
 		//bước 3    //bước 2
-		menu =     new SVMenu(out, in, prompt);
+		//menu =     new SVMenu(out, in, prompt);
+		menu = new SVMenu(out, in, prompt, svControlAdd);
 		
 		//gửi thông điệp
 		menu.controlLoop();

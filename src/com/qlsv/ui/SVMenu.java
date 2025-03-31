@@ -24,7 +24,8 @@ public class SVMenu {
 	
 	
 	
-	public SVMenu(PrintWriter out, Scanner in, String prompt, SVControlAdd svControlAdd) {
+	public SVMenu(PrintWriter out, Scanner in, 
+			String prompt, SVControlAdd svControlAdd) {
 //		this.out = out;
 //		this.in = in;
 //		this.prompt = prompt;
