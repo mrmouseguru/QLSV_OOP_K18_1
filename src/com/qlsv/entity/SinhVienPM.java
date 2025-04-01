@@ -8,6 +8,12 @@ public class SinhVienPM extends SinhVien{
 	private double diemCss;
 	private double diemHtml;
 	
+	public void setDiemJava(double newDiemJava) {
+		if(newDiemJava >=0 && newDiemJava <= 10) {
+			this.diemJava = newDiemJava;
+		}
+		
+	}
 	
 	public SinhVienPM() {}
 	

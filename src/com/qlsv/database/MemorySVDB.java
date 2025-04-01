@@ -32,5 +32,9 @@ public class MemorySVDB {
 	public static void insert(SinhVien sv) {
 		svDB.add(sv);
 	}
+	
+	public static ArrayList<SinhVien> getDSSV(){
+		return svDB;
+	}
 
 }
