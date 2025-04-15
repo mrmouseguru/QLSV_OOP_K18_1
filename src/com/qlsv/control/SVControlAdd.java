@@ -1,5 +1,6 @@
 package com.qlsv.control;
 
+import com.qlsv.database.MemorySVAddDAO;
 import com.qlsv.database.SVAddDAO;
 import com.qlsv.entity.SinhVien;
 import com.qlsv.ui.SVInAdd;
@@ -8,6 +9,7 @@ import com.qlsv.ui.SVOutAdd;
 public class SVControlAdd {
 	
 	//
+	//private MemorySVAddDAO svAddDAO;
 	private SVAddDAO svAddDAO;
 	private SVInAdd svInAdd;
 	private SVOutAdd svOutAdd;
