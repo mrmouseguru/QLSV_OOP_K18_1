@@ -2,7 +2,7 @@ package com.qlsv.entity;
 
 import java.util.Date;
 
-public class SinhVien {
+public abstract class SinhVien {
 	
 	private int maSV;
 	private String hoTen;
@@ -25,16 +25,16 @@ public class SinhVien {
 	public SinhVien() {}
 	
 	public SinhVien(int maSV, String hoTen, String nganh, Date ngaySinh) {
-		super();
 		this.maSV = maSV;
 		this.hoTen = hoTen;
 		this.nganh = nganh;
 		this.ngaySinh = ngaySinh;
 	}
 	
-	public double tinhDiem() {
-		return 0;
-	}
+	public abstract double tinhDiem();
+//	{
+//		return 0;
+//	}
 	
 	public String tinhHocLuc() {
 		
@@ -50,6 +50,13 @@ public class SinhVien {
         } else {
             return "Xuất sắc";
         }
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		//new SinhVien(0, null, null, null);//không hợp lý
+		//phi logic
 		
 	}
 	
