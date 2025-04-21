@@ -5,8 +5,10 @@ import java.util.Scanner;
 
 import com.qlsv.control.SVControlAdd;
 import com.qlsv.control.SVControlPrint;
+import com.qlsv.database.FileSVAddDAO;
+import com.qlsv.database.FileSVPrintDAO;
 import com.qlsv.database.MemorySVAddDAO;
-import com.qlsv.database.SVPrintDAO;
+import com.qlsv.database.MemorySVPrintDAO;
 import com.qlsv.ui.SVInAdd;
 import com.qlsv.ui.SVMenu;
 import com.qlsv.ui.SVOutAdd;
@@ -22,22 +24,26 @@ public class AppQLSV {
 		String prompt = "->";
 		SVControlAdd svControlAdd;
 		SVInAdd svInAdd;
-		MemorySVAddDAO svAddDAO;
+		//MemorySVAddDAO svAddDAO;
+		FileSVAddDAO fileSVAddDAO;
 		SVOutAdd svOutAdd;
 		SVControlPrint svControlPrint;
-		SVPrintDAO svPrintDAO;
+		//MemorySVPrintDAO svPrintDAO;
+		FileSVPrintDAO  fileSVPrintDAO;
 		SVOutPrint svOutPrint;
 		
 		//bước 3    //bước 2
 		out =       new PrintWriter(System.out);
 		in = new Scanner(System.in);
 		svInAdd = new SVInAdd(in, out);
-		svAddDAO = new MemorySVAddDAO();
+		//svAddDAO = new MemorySVAddDAO();
+		fileSVAddDAO = new FileSVAddDAO();
 		svOutAdd = new SVOutAdd(out);
 		svOutPrint = new SVOutPrint(out);
-		svPrintDAO = new SVPrintDAO();
-		svControlPrint = new SVControlPrint(svPrintDAO, svOutPrint);
-		svControlAdd = new SVControlAdd(svAddDAO, svInAdd, svOutAdd);
+		//svPrintDAO = new MemorySVPrintDAO();
+		fileSVPrintDAO = new FileSVPrintDAO();
+		svControlPrint = new SVControlPrint(fileSVPrintDAO, svOutPrint);
+		svControlAdd = new SVControlAdd(fileSVAddDAO, svInAdd, svOutAdd);
 		
 		//gửi thông điệp
 		out.println("~~~~~Chương trình Quản lý sinh viên ~~~");

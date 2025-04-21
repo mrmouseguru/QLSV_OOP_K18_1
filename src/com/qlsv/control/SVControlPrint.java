@@ -2,12 +2,14 @@ package com.qlsv.control;
 
 import java.util.ArrayList;
 
+import com.qlsv.database.MemorySVPrintDAO;
 import com.qlsv.database.SVPrintDAO;
 import com.qlsv.entity.SinhVien;
 import com.qlsv.ui.SVOutPrint;
 
 public class SVControlPrint {
 	
+	//private MemorySVPrintDAO svPrintDAO;
 	private SVPrintDAO svPrintDAO;
 	private SVOutPrint svOutPrint;
 	

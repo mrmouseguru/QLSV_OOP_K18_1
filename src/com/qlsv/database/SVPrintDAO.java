@@ -4,10 +4,8 @@ import java.util.ArrayList;
 
 import com.qlsv.entity.SinhVien;
 
-public class SVPrintDAO {
+public abstract class SVPrintDAO {
 	
-	public ArrayList<SinhVien> getDSSV(){
-		return MemorySVDB.getDSSV();
-	}
+	public abstract ArrayList<SinhVien> getDSSV();
 
 }

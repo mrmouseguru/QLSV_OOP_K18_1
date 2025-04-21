@@ -1,8 +1,9 @@
 package com.qlsv.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public abstract class SinhVien {
+public abstract class SinhVien implements Serializable{
 	
 	private int maSV;
 	private String hoTen;
